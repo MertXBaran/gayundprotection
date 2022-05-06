@@ -1,11 +1,12 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-
+local uberwebhook = "webhook giriniz"
 local malgaunth = {
-	{event = "viber-base:armor:additem", kick=true, log=true , webhook="https://discord.com/api/webhooks/972052281652576266/OwOidaoYDt6iMlnSPaUloDMO9gzDV4zwMog405cE4CtWtG6xzWosJ3Qpr07dO7U33d-n"},
-	{event = "m3:armor:additem", kick=true, log=true , webhook="https://discord.com/api/webhooks/972052281652576266/OwOidaoYDt6iMlnSPaUloDMO9gzDV4zwMog405cE4CtWtG6xzWosJ3Qpr07dO7U33d-n"},
+	{event = "viber-base:armor:additem", kick=true, log=true , webhook="webhook giriniz"},
+	{event = "m3:armor:additem", kick=true, log=true , webhook="webhook giriniz"},
 }
+
 Citizen.CreateThread(function()
     for k, v in pairs(malgaunth) do
         print(v.event)
@@ -40,7 +41,7 @@ AddEventHandler("dropme", function(reason)
         return
     end
     DropPlayer(source, "Gaunth Malı Farkı ile Sunucudan atıldınız Sebebiyedülvahşet: "..reason)
-    dclog("https://discord.com/api/webhooks/972052281652576266/OwOidaoYDt6iMlnSPaUloDMO9gzDV4zwMog405cE4CtWtG6xzWosJ3Qpr07dO7U33d-n", player, "Oyuncu Sunucudan atıldı Sebebiyedülvahşey: "..reason)
+    dclog(uberwebhook, player, "Oyuncu Sunucudan atıldı Sebebiyedülvahşey: "..reason)
 end)
 
 

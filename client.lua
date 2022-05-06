@@ -34,18 +34,20 @@ local banlicamseni = true
 
 RegisterNetEvent("kontroletbeniya")
 AddEventHandler("kontroletbeniya", function()
-    local player = PlayerPedId()
-    local playercoords = GetEntityCoords()
-    banlicamseni = true
-    for k, v in pairs(UberWhitelist) do
-        if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), v.x, v.y, v.z, true) < 10 then
-            
-            banlicamseni = false
+    if AntiUberExploit == true then
+        local player = PlayerPedId()
+        local playercoords = GetEntityCoords()
+        banlicamseni = true
+        for k, v in pairs(UberWhitelist) do
+            if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), v.x, v.y, v.z, true) < 10 then
+                
+                banlicamseni = false
+            end
         end
-    end
-    if banlicamseni == true then
-        print("banland,n")
-        TriggerServerEvent("dropme", "Uberden para basmayi denedim ya of")
+        if banlicamseni == true then
+            print("banland,n")
+            TriggerServerEvent("dropme", "Uberden para basmayi denedim ya of")
+        end
     end
 end)
 
